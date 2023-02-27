@@ -1,4 +1,6 @@
+from django.shortcuts import render, get_object_or_404
 from .models import Post
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
 from .forms import EmailPostForm
 
@@ -31,7 +33,8 @@ def post_share(request, post_id):
             cd = form.cleaned_data
     else:
         form = EmailPostForm()
-    return render(request, 'blog/post/share.html', {'post': post, 'form': form})
+    return render(request, 'blog/post/share.html', {'post': post,
+                                                    'form': form})
 
 
 
