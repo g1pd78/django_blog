@@ -5,3 +5,4 @@ mysite/blog/__pycache__
 mysite/blog/migrations
 db.sqlite3
 mysite/mysite/__pycache__
+mysite_data.json
